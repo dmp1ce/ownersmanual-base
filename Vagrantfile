@@ -18,6 +18,13 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network :forwarded_port, guest: 80, host: 8080
 
+  # Share SSH locally by default (Try to pick a different host port than your other VMs)
+  config.vm.network :forwarded_port,
+    guest: 22,
+    host: 2201,
+    id: "ssh",
+    auto_correct: true
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network :private_network, ip: "10.1.1.103"
