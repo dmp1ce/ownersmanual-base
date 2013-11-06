@@ -1,0 +1,22 @@
+Go to scotty directory
+======================
+
+1. vagrant ssh
+2. cd /vagrant/scotty
+
+Prepare and compile executable
+==================
+
+1. cabal update
+2. cabal install --only-dependencies --force-reinstalls
+3. cabal build
+
+Run executable
+==============
+
+1. sudo ./ownersmanual
+
+Rebuild and run
+===============
+
+1. cabal build && sudo ./ownersmanual
